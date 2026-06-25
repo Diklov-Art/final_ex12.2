@@ -3,10 +3,10 @@ name: Go CI/CD Pipeline
 on:
   push:
     branches: [ main, master ]
+    tags:
+      - 'v*'
   pull_request:
     branches: [ main, master ]
-  tags:
-    - 'v*'
 
 jobs:
   test:

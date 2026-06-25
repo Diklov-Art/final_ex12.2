@@ -21,6 +21,23 @@ jobs:
         with:
           go-version: '1.21'
 
+      - name: Debug - Show files
+        run: |
+          pwd
+          ls -la
+          echo "---"
+          cat go.mod
+
+      - name: Initialize Go module if needed
+        run: |
+          if [ ! -f go.mod ]; then
+            go mod init github.com/Diklov-Art/final-12_
+            go mod tidy
+          fi
+
+      - name: Download dependencies
+        run: go mod download
+
       - name: Build
         run: go build -v ./...
 

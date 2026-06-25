@@ -2,7 +2,7 @@ name: Go CI/CD Pipeline
 
 on:
   push:
-    branches: [ feature/ci-cd-workflow, main, master ]
+    branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
   tags:
